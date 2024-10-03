@@ -4,7 +4,7 @@ from typing import Optional
 from pydantic import BaseModel
 
 router = APIRouter(
-    tags=["profile"],
+    tags=["likedSector"],
     responses={404: {"description" : "Not Found"}},
 )
 

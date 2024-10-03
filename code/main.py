@@ -3,11 +3,11 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from contextlib import asynccontextmanager
-from example import router as test_router
+# from example import router as test_router
 from database import database
-# from likedSector import likedSector
+from likedSector import likedSector
 import asyncio
-from crawling import crawling
+from crawling.crawling import *
 
 async def schedule_crawling(interval):
     while True:
@@ -43,8 +43,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(test_router.router, prefix="/test")
-# app.include_router(likedSector.router, prefix="/likedSector")
+# app.include_router(test_router.router, prefix="/test")
+app.include_router(likedSector.router, prefix="/likedSector")
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)

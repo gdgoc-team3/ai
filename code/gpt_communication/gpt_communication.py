@@ -13,7 +13,7 @@ def gpt_communication(systemmessage, usermessage):
     openai.api_key = gpt_key
 
     # GPT-4 모델에 요청 보내기
-    response = openai.ChatCompletion.create(
+    response = openai.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": systemmessage},

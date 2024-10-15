@@ -73,7 +73,7 @@ def initialize_csv():
 
 def crawling():
     # CSV 초기화 (첫 실행 시 헤더 추가)
-    initialize_csv()
+    #initialize_csv()
 
     # 30분마다 fetch_news 함수 실행
     schedule.every(30).minutes.do(fetch_news)

@@ -20,7 +20,7 @@ async def schedule_crawling(interval):
 async def lifespan(app: FastAPI):
     print("서버 시작 중...")
     # 데이터베이스 연결
-    await database.connect()
+    # await database.connect()
     
     # crawling을 백그라운드에서 주기적으로 실행
     crawling_task = asyncio.create_task(schedule_crawling(30))
@@ -30,7 +30,7 @@ async def lifespan(app: FastAPI):
     # 서버가 종료될 때
     print("서버 종료 중...")
     crawling_task.cancel()  # crawling 작업 중단
-    await database.disconnect()
+    # await database.disconnect()
 
 app = FastAPI(lifespan=lifespan)
 

@@ -19,7 +19,7 @@ def gpt_communication(systemmessage, usermessage):
             {"role": "system", "content": systemmessage},
             {"role": "user", "content": usermessage},
         ],
-        temperature=0.6
+        temperature=0.8
     )
 
     # 응답 출력

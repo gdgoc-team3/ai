@@ -186,7 +186,7 @@ async def feedback(info: List[str] = Query(..., description="사용자 정보 �
     json_data = json.loads(cleaned_content)
     print("\n\n\n", json_data)
     
-            
+        
     return json_data
 
 

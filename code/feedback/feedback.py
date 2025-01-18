@@ -12,28 +12,6 @@ router = APIRouter(
 
 
 
-@router.post("/readInfo", summary="사용자 기본 정보 입력")
-async def feedback(info: List[str] = Query(..., description="사용자 정보 목록", max_length=4), shared: SharedData = Depends(get_shared_data)):
-    
-    """
-    사용자 기본 정보를 입럭받는 엔드포인트입니다.
-    - 형식
-        - /readInfo?info=생년월일?info=전공?info=희망직종?info=취업기간
-        - 생년월일 : yyyymmdd
-        - 전공 : ex)소프트웨어, 기계공학
-        - 희망직종 : ex)웹 개발자, 임베디드 개발자, 디자이너
-        - 취업기간 : n년m개월 : nmm ex) 1년2개월: 102, 0년 6개월: 006
-        
-    """
-    print(info)
-    shared.set_value("생년월일", info[0])
-    shared.set_value("전공", info[1])
-    shared.set_value("희망직종", info[2])
-    shared.set_value("취업기간", info[3])
-    
-    return {"message", f"{info} value saved"}
-
-
 
 
 

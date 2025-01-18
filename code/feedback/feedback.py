@@ -298,7 +298,6 @@ async def feedback(tasks: List[str] = Query(..., description="사용자 일정 �
                         
                     """.format(tasklist=gpt_insert_info)
                     
-                    
 
 
     gpt_raw = gpt_communication(systemmessage=None, usermessage=userMessageRaw)

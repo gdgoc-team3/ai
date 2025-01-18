@@ -261,7 +261,7 @@ async def feedback(tasks: List[str] = Query(..., description="실제 이행 목�
     return json.loads(gpt_content)
 
 
-@router.get("/manageTeam", summary="비슷한 일정끼리 묶기")
+@router.get("/manageTask", summary="비슷한 일정끼리 묶기")
 async def feedback(tasks: List[str] = Query(..., description="사용자 일정 목록")):
     
     """
@@ -270,7 +270,7 @@ async def feedback(tasks: List[str] = Query(..., description="사용자 일정 �
     가장 가깝다고 판단되는 항목을 반환하는 엔드포인트입니다.
     
     - 형식
-    - /manageTeam?tasks='땡땡하기'?tasks='응응하기'?tasks='앙앙하기'
+    - /manageTask?tasks='땡땡하기'?tasks='응응하기'?tasks='앙앙하기'
         - tasks: ex) '잉잉하기' (str) <- list라 tasks들끼리는 ?로 구분해야함
         
     """

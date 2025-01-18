@@ -51,8 +51,6 @@ async def feedback(info: List[str] = Query(..., description="사용자 정보 �
                         {{
                           tasks: [
                                     {{
-                                        taskId: 1,
-                                        isCompleted: fasle,
                                         title: “HTML+CSS+JS 책 읽기”,
                                         startDate: {{
                                             year: 2025
@@ -70,8 +68,6 @@ async def feedback(info: List[str] = Query(..., description="사용자 정보 �
                                         }}
                                     }},
                                     {{
-                                        taskId: 2,
-                                        isCompleted: fasle,
                                         title: “인프런 강좌 시청”,
                                         startDate: {{
                                             year: 2025
@@ -89,8 +85,6 @@ async def feedback(info: List[str] = Query(..., description="사용자 정보 �
                                         }}
                                     }},
                                     {{
-                                        taskId: 3,
-                                        isCompleted: fasle,
                                         title: “배운 내용 복습”,
                                         startDate: {{
                                             year: 2025
@@ -108,8 +102,6 @@ async def feedback(info: List[str] = Query(..., description="사용자 정보 �
                                         }}
                                     }},
                                     {{
-                                        taskId: 4,
-                                        isCompleted: fasle,
                                         title: “어제 학습한 내용 실습”,
                                         startDate: {{
                                             year: 2025
@@ -127,8 +119,6 @@ async def feedback(info: List[str] = Query(..., description="사용자 정보 �
                                         }}
                                     }},
                                     {{
-                                        taskId: 5,
-                                        isCompleted: fasle,
                                         title: “실습한 내용 바탕으로 게시판 프로젝트 제작”,
                                         startDate: {{
                                             year: 2025
@@ -146,8 +136,6 @@ async def feedback(info: List[str] = Query(..., description="사용자 정보 �
                                         }}
                                     }},
                                     {{
-                                        taskId: 6,
-                                        isCompleted: fasle,
                                         title: “어제 만들던 게시판 프로젝트 완성”,
                                         startDate: {{
                                             year: 2025

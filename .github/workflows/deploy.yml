@@ -20,7 +20,7 @@ jobs:
 
       - name: Deploy to EC2
         run: |
-          ssh -o StrictHostKeyChecking=no -i private_key.pem ubuntu@172.31.3.45 << 'EOF'
+          ssh -o StrictHostKeyChecking=no -i private_key.pem ubuntu@ai.gdgoc-team3.site << 'EOF'
             cd ~/ai/code
             git pull origin main
             docker-compose down

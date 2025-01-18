@@ -191,7 +191,7 @@ async def feedback(info: List[str] = Query(..., description="사용자 정보 �
 
 
 @router.get("/evaluateSchedule", summary="입력된 일정 평가")
-async def feedback(tasks: List[str] = Query(..., description="실제 이행 목록"), isChecked: List[bool] = Query(..., description="실제 이행 여부")):
+async def evaluate(tasks: List[str] = Query(..., description="실제 이행 목록"), isChecked: List[bool] = Query(..., description="실제 이행 여부")):
     
     """
     실제 사용자가 이행한 일정을 평가하는 엔드포인트입니다.
@@ -262,7 +262,7 @@ async def feedback(tasks: List[str] = Query(..., description="실제 이행 목�
 
 
 @router.get("/manageTask", summary="비슷한 일정끼리 묶기")
-async def feedback(tasks: List[str] = Query(..., description="사용자 일정 목록")):
+async def manage(tasks: List[str] = Query(..., description="사용자 일정 목록")):
     
     """
     tasks(list타입) 을 입력받으면 시스템 개발자 취업 준비, 임베디드 개발자 취업 준비, 인공지능 개발자 취업 준비, 

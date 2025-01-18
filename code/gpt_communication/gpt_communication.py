@@ -14,9 +14,9 @@ def gpt_communication(systemmessage, usermessage):
 
     # GPT-4 모델에 요청 보내기
     response = openai.chat.completions.create(
-        model="gpt-3.5-turbo",
+        model="o1-mini",
         messages=[
-            {"role": "system", "content": systemmessage},
+            #{"role": "system", "content": systemmessage},
             {"role": "user", "content": usermessage},
         ]
     )

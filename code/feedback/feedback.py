@@ -302,6 +302,7 @@ async def feedback(tasks: List[str] = Query(..., description="사용자 일정 �
 
 
 
+
     gpt_raw = gpt_communication(systemmessage=None, usermessage=userMessageRaw)
     gpt_content = gpt_raw.model_dump()["choices"][0]["message"]["content"]
 

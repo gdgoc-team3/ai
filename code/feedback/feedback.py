@@ -179,11 +179,11 @@ async def feedback(info: List[str] = Query(..., description="사용자 정보 �
     gpt_raw = gpt_communication(systemmessage=None, usermessage=userMessageRaw)
     gpt_content = gpt_raw.model_dump()["choices"][0]["message"]["content"]
     
-    # ` ```json ` 및 ` ``` ` 제거
-    cleaned_content = gpt_content.replace("```json", "").replace("```", "").strip()
-    print(cleaned_content)
+    # # ` ```json ` 및 ` ``` ` 제거
+    # cleaned_content = gpt_content.replace("```json", "").replace("```", "").strip()
+    print(gpt_content)
 # 문자열을 JSON으로 변환
-    json_data = json.loads(cleaned_content)
+    json_data = json.loads(gpt_content)
     print("\n\n\n", json_data)
     
         

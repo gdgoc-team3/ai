@@ -14,11 +14,12 @@ def gpt_communication(systemmessage, usermessage):
 
     # GPT-4 모델에 요청 보내기
     response = openai.chat.completions.create(
-        model="o1-mini",
+        model="gpt-4o-mini",
         messages=[
             #{"role": "system", "content": systemmessage},
             {"role": "user", "content": usermessage},
-        ]
+        ],
+        response_format={"type":"json_object"}
     )
 
     # 응답 출력

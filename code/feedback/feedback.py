@@ -161,6 +161,7 @@ async def feedback(info: List[str] = Query(..., description="사용자 정보 �
                     하루 일정은 시작 시작 10시 끝나는 시간 21시를 준수해 주세요.
                     또한 매일매일 같은 일정을 설정하는 것을 금지합니다.
                     title 항목은 한국어로 작성해 주세요.
+                    json 형식으로 반환해 주세요.
                     
                     [입력]
                     - 생년월일 : {birthday}
@@ -177,11 +178,16 @@ async def feedback(info: List[str] = Query(..., description="사용자 정보 �
 
     gpt_raw = gpt_communication(systemmessage=None, usermessage=userMessageRaw)
     gpt_content = gpt_raw.model_dump()["choices"][0]["message"]["content"]
-
-    print("\n\n\n", gpt_content)
+    
+    # ` ```json ` 및 ` ``` ` 제거
+    cleaned_content = gpt_content.replace("```json", "").replace("```", "").strip()
+    print(cleaned_content)
+# 문자열을 JSON으로 변환
+    json_data = json.loads(cleaned_content)
+    print("\n\n\n", json_data)
     
             
-    return {gpt_content}
+    return json_data
 
 
 @router.get("/evaluateSchedule", summary="입력된 일정 평가")
@@ -227,6 +233,7 @@ async def feedback(info: List[str] = Query(..., description="사용자 정보 �
                     하루 일정은 시작 시작 10시 끝나는 시간 21시를 준수해 주세요.
                     또한 매일매일 같은 일정을 설정하는 것을 금지합니다.
                     title 항목은 한국어로 작성해 주세요.
+                    
                     
                     [입력]
                     - 생년월일 : {birthday}
